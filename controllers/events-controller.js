@@ -21,8 +21,8 @@ export function create(req, res) {
     !address ||
     !address.trim() ||
     !date ||
-    isNaN(Date.parse(date))
-    // !image
+    isNaN(Date.parse(date)) ||
+    !image
   ) {
     return res.status(400).json({ message: "Invalid input data" });
   }
@@ -32,7 +32,7 @@ export function create(req, res) {
     description: description.trim(),
     address: address.trim(),
     date,
-    // image: image.filename,
+    image: image.filename,
     userId: req.user.id,
   });
   res.status(201).json(event);
@@ -41,7 +41,7 @@ export function create(req, res) {
 export function edit(req, res) {
   const { id } = req.params;
   const { title, description, address, date } = req.body;
-  // const image = req.file;
+  const image = req.file;
 
   // Validation
   if (
@@ -52,8 +52,8 @@ export function edit(req, res) {
     !address ||
     !address.trim() ||
     !date ||
-    isNaN(Date.parse(date))
-    // !image
+    isNaN(Date.parse(date)) ||
+    !image
   ) {
     return res.status(400).json({ message: "Invalid input data" });
   }
@@ -74,7 +74,7 @@ export function edit(req, res) {
     description: description.trim(),
     address: address.trim(),
     date,
-    // image: image.filename,
+    image: image.filename,
   });
 
   res.status(200).json(updatedEvent);
