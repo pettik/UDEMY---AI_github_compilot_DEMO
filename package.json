@@ -7,7 +7,7 @@
     "dev": "node --watch app.js"
   },
   "keywords": [],
-  "author": "Maximilian Schwarzmüller / Academind GmbH",
+  "author": "Petr Bednarski - modified project from Mr. Maximilian Schwarzmüller / Academind GmbH",
   "license": "ISC",
   "description": "",
   "dependencies": {
